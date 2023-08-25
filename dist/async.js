@@ -966,7 +966,7 @@ function iterator(coll) {
 
 function onlyOnce(fn) {
     return function() {
-        if (fn === null) throw new Error("Callback was already called.");
+        if (fn === null) {console.info('Callback was already called.'); return;}
         var callFn = fn;
         fn = null;
         callFn.apply(this, arguments);
